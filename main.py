@@ -32,3 +32,10 @@ apple.isnull().sum()
 apple.dropna(subset = ['Adj Close'], inplace=True)
 print(apple.shape)
 print(apple.isnull().sum())
+
+apple["Low"].fillna('Lowest', inplace=True)
+
+print(apple.shape)
+print(apple.isnull().sum())
+print(APPLE.isnull().sum())
+
