@@ -26,7 +26,9 @@ print(APPLE.dtypes)
 print(APPLE.describe(include="all"))
 print("-------------------------------------------------------------- \n")
 
-apple.drop(columns='Adj Close', inplace=True)
 apple.drop(columns='Volume', inplace=True)
-
 apple.isnull().sum()
+
+apple.dropna(subset = ['Adj Close'], inplace=True)
+print(apple.shape)
+print(apple.isnull().sum())
