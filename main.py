@@ -15,14 +15,18 @@ print("-------------------------------------------------------------- \n")
 print(APPLE.head(420))
 print("-------------------------------------------------------------- \n")
 
-print("Apple Stock:")
+print("Apple StockType:")
 print(apple.shape)
 print(apple.dtypes)
 print(apple.describe(include="all"))
 print("-------------------------------------------------------------- \n")
-
-print("APPLE shape: ")
+print("APPLE StockShape: ")
 print(APPLE.shape)
 print(APPLE.dtypes)
 print(APPLE.describe(include="all"))
 print("-------------------------------------------------------------- \n")
+
+apple.drop(columns='Adj Close', inplace=True)
+apple.drop(columns='Volume', inplace=True)
+
+apple.isnull().sum()
