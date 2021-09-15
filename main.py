@@ -1,3 +1,7 @@
 
+import numpy as np
 import pandas as pd
-print("Hello World")
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style= "darkgrid")
+import sqlite3 as sql
