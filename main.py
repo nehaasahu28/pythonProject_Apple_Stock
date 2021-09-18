@@ -55,7 +55,9 @@ print(apple_df.head())
 print(apple_df.tail())
 x = np.array(apple_df.drop(["Prediction"], 1))[:]
 print(x)
-
+#creating and converting new y o get all target values
+y = np.array(apple_df["Prediction"])[:]
+print(y)
 #apple.drop(columns='Volume', inplace=True)
 #apple.isnull().sum()
 
