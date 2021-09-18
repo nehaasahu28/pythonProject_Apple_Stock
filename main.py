@@ -30,7 +30,29 @@ print(stock_data.shape)
 print(stock_data.dtypes)
 print(stock_data.describe(include="all"))
 
-g = sns.pairplot(apple_df[['Open','High','Low']], plot_kws={'color':'#bddc0e'})
+#g = sns.pairplot(apple_df[['Open','High','Low']], plot_kws={'color':'#bddc0e'})
+#plt.show()
+
+apple_df['Adj Close'].replace(to_replace = ['Adjust Close'],value = 'Adjust Close', inplace = True)
+apple_df['Adj Close'].value_counts()
+apple_df['Open'].value_counts()
+
+#dropping column
+apple_df.drop(columns=['Adj Close'],inplace = True)
+Total = apple_df.isnull().sum().sort_values(ascending=False)
+Percentage = (Total/apple_df.isnull().count()).sort_values(ascending=False)
+null = pd.concat([Total, Percentage], axis=1, keys=['Total','Percentages'])
+null.head()
+print(null)
+#Replacing values
+
+apple_df['Close'].fillna("No", inplace = True)
+apple_df['Close'].value_counts()
+
+#creating & converting to a numpy array
+apple_df["Prediction"] = apple_df[["Close"]].shift()
+print(apple_df.head())
+print(apple_df.tail())
 
 #apple.drop(columns='Volume', inplace=True)
 #apple.isnull().sum()
