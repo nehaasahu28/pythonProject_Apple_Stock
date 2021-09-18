@@ -53,6 +53,8 @@ apple_df['Close'].value_counts()
 apple_df["Prediction"] = apple_df[["Close"]].shift()
 print(apple_df.head())
 print(apple_df.tail())
+x = np.array(apple_df.drop(["Prediction"], 1))[:]
+print(x)
 
 #apple.drop(columns='Volume', inplace=True)
 #apple.isnull().sum()
